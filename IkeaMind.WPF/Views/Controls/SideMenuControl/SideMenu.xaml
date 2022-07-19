@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="IkeaMind.WPF.Views.Controls.SideMenuControl.SideMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IkeaMind.WPF.Views.Controls.SideMenuControl" 
+             xmlns:vms="clr-namespace:IkeaMind.WPF.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=vms:MainViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="635" d:DesignWidth="85">
+    <DockPanel Background="#FFFFFF">
+        <ListBox Padding="0,20,0,0" HorizontalContentAlignment="Center" DockPanel.Dock="Top" VerticalAlignment="Top" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" Width="85" Height="250px" ItemsSource="{Binding MenuElements}" SelectedItem="{Binding SelectedMenuElement}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical" HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Margin" Value="0,0,0,10"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate >
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center" Width="40" Height="40" VerticalAlignment="Top">
+                        <StackPanel>
+                            <local:SideMenuElement/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</UserControl>

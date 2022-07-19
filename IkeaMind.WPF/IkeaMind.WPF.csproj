@@ -1,0 +1,111 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="IkeaArticlesDemo.db" />
+    <None Remove="Images\Exit1.png" />
+    <None Remove="Images\Exit2.png" />
+    <None Remove="Images\GuyDefault.png" />
+    <None Remove="Images\GuyWrong.png" />
+    <None Remove="Images\homeScreen.png" />
+    <None Remove="Images\Icons\chair.png" />
+    <None Remove="Images\Icons\flagSe.ico" />
+    <None Remove="Images\Icons\flagSeIcon.ico" />
+    <None Remove="Images\Icons\home.png" />
+    <None Remove="Images\Icons\mIcon.ico" />
+    <None Remove="Images\Icons\mindIcon.ico" />
+    <None Remove="Images\Icons\mindIcon_FlagSE.ico" />
+    <None Remove="Images\Icons\name.png" />
+    <None Remove="Images\IkeaLogo.png" />
+    <None Remove="Images\KampradHej.png" />
+    <None Remove="Images\LK_Sweden.png" />
+    <None Remove="Images\mind2RedLogo.png" />
+    <None Remove="Images\mind2RedLogoSmall.png" />
+    <None Remove="Images\mockFurniture.png" />
+    <None Remove="Images\modeDescriptions.png" />
+    <None Remove="Images\noInternet.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="IkeaArticlesDemo.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IkeaMind.Core\IkeaMind.Core.csproj" />
+    <ProjectReference Include="..\IkeaMind.Infrastructure\IkeaMind.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Exit1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Exit2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\GuyDefault.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\GuyWrong.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\homeScreen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Icons\chair.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Icons\flagSe.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Icons\flagSeIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Icons\home.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Icons\mIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Icons\mindIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Icons\mindIcon_FlagSE.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Icons\name.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\IkeaLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\KampradHej.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\LK_Sweden.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\mind2RedLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\mind2RedLogoSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\mockFurniture.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\modeDescriptions.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\noInternet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,39 @@
+﻿<Window x:Class="IkeaMind.WPF.Windows.InternetFailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vmsWindows="clr-namespace:IkeaMind.WPF.ViewModels.Windows" 
+        d:DataContext="{d:DesignInstance Type=vmsWindows:InternetFailViewModel}"
+        mc:Ignorable="d"
+        Icon="./../Images/Icons/flagSE.ico"
+        Title="О, нет, проблемы с инетом!" Height="430" Width="595"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary 
+                Source= "/StyleDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <DockPanel Background="#FFFFFF">
+        <Image DockPanel.Dock="Top" VerticalAlignment="Top" Width="550" Height="263" Source="./../Images/noInternet.png"/>
+        <TextBlock Margin="0, 15, 0, 0" FontFamily="Verdana" FontSize="13" DockPanel.Dock="Top" VerticalAlignment="Top" TextWrapping="Wrap" TextAlignment="Center">
+            <Bold>О, нет! Кажется, у вас проблемы с интернетом. </Bold> <LineBreak/>
+            Попробуйте устранить их и мы снова постараемся загрузить картинки.
+        </TextBlock>
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Width="342px" Height="40px" Margin="0,0,0,0">
+            <Button Style="{StaticResource BlueButton}" Command="{Binding Retry}" Width="150" Height="40" FontSize="18px" FontWeight="Bold" >
+                Повторить
+            </Button>
+
+            <Button Style="{StaticResource WhiteButton}" Command="{Binding Exit}" Width="150" Height="40" FontSize="15px" FontWeight="Bold" Margin="40,0,0,0">
+                Выйти
+            </Button>
+        </StackPanel>
+
+    </DockPanel>
+</Window>

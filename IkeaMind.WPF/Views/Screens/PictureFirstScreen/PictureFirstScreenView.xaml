@@ -1,0 +1,70 @@
+﻿<Page x:Class="IkeaMind.WPF.Views.Screens.PictureFirstScreen.PictureFirstScreenView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IkeaMind.WPF.Views.Screens.PictureFirstScreen" 
+      xmlns:views="clr-namespace:IkeaMind.WPF.Views.Screens.PictureFirstScreen.UserControls" 
+      xmlns:picturefirstscreen="clr-namespace:IkeaMind.WPF.ViewModels.Screens.PictureFirstScreenViewModels" xmlns:statisticControl="clr-namespace:IkeaMind.WPF.Views.Controls.StatisticControl" xmlns:wrongorrightcontrol="clr-namespace:IkeaMind.WPF.Views.Controls.WrongOrRightControl"
+      d:DataContext="{d:DesignInstance Type=picturefirstscreen:PictureFirstScreenViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="635" d:DesignWidth="715">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary 
+                Source= "/StyleDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    <DockPanel Background="#FFFFFF">
+        <DockPanel Height="357" DockPanel.Dock="Top" VerticalAlignment="Top">
+            <DockPanel Margin="0,10,0,0" DockPanel.Dock="Top" VerticalAlignment="Top">
+                <views:HeaderView Width="570px"  HorizontalAlignment="Center" VerticalAlignment="Top" DockPanel.Dock="Top"/>
+            </DockPanel>
+            <DockPanel Width="550px" Height="250px" Margin="0,15,0,0">
+                <DockPanel>
+                    <views:ProductPictureView VerticalAlignment="Top" HorizontalAlignment="Right" Width="200px" Height="200px" />
+                </DockPanel>
+                <DockPanel  Margin="15,0,0,0">
+
+                    <ListBox HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Width="320" Height="200px" SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Height="60" VerticalAlignment="Center">
+                                    <views:ProductNameView Width="280px" Margin="10,0" VerticalAlignment="Center" VerticalContentAlignment="Center" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </DockPanel>
+        </DockPanel>
+        
+        <wrongorrightcontrol:WrongOrRightControl DockPanel.Dock="Top"/>
+        
+        <DockPanel DockPanel.Dock="Top" VerticalAlignment="Top">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Width="442px" Height="50px" Margin="0,15,0,0">
+                <Button Style="{StaticResource BlueButton}" Command="{Binding ApplySelectionCommand}" CommandParameter="{Binding SelectedProduct}" Width="200" Height="50" FontWeight="Bold" FontSize="18px">
+                    Проверить!
+                </Button>
+
+                <Button Style="{StaticResource WhiteButton}" Command="{Binding ShowNextProductsCommand}" Width="200" Height="50" FontSize="15px" FontWeight="Bold" Margin="40,0,0,0">
+                    Найти другие товары
+                </Button>
+            </StackPanel>
+
+            <statisticControl:Statistics DockPanel.Dock="Top" x:Name="Scores" Width="180px" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+        </DockPanel>
+        
+        <DockPanel VerticalAlignment="Bottom" Height="auto" >
+            <Image Width="130px" Height="45px" Source="./../../../Images/LK_Sweden.png"  Margin="0,0,0,15" />
+        </DockPanel>
+    </DockPanel>
+</Page>

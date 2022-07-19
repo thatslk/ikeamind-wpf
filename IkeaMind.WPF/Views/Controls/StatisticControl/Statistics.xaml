@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="IkeaMind.WPF.Views.Controls.StatisticControl.Statistics"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IkeaMind.WPF.Views.Controls.StatisticControl"
+             mc:Ignorable="d" 
+             xmlns:vmsHomeScreen="clr-namespace:IkeaMind.WPF.ViewModels.Screens" 
+             d:DesignHeight="75" d:DesignWidth="180">
+    <StackPanel DockPanel.Dock="Top" x:Name="Scores" Width="180px" HorizontalAlignment="Center">
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Height="22" HorizontalAlignment="Center" >
+            <TextBlock FontWeight="Bold" FontSize="13pt" Foreground="#FF0058AB"  FontFamily="Montseratt">Текущий счет:</TextBlock>
+            <TextBlock Margin="5,0,0,0" FontSize="13pt" FontWeight="Bold" FontFamily="Montseratt" Text="{Binding TotalScore, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Height="22" HorizontalAlignment="Center" >
+            <TextBlock FontWeight="Bold" FontSize="13pt" Foreground="#FF0058AB"  FontFamily="Montseratt">Лучший счет:</TextBlock>
+            <TextBlock Margin="5,0,0,0" FontSize="13pt" FontWeight="Bold" FontFamily="Montseratt" Text="{Binding HighScore, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        </StackPanel>
+
+        <!--<StackPanel Orientation="Horizontal" Margin="0,0,0,0" Height="22" HorizontalAlignment="Center" >
+            <TextBlock FontWeight="Bold" FontSize="13pt" Foreground="#FF0058AB"  FontFamily="Montseratt">В очереди:</TextBlock>
+            <TextBlock Margin="5,0,0,0" FontSize="13pt" FontWeight="Bold" FontFamily="Montseratt" Text="{Binding DebugQueueCount, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        </StackPanel>-->
+
+    </StackPanel>
+</UserControl>

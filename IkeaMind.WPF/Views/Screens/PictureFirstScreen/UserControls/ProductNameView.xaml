@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="IkeaMind.WPF.Views.Screens.PictureFirstScreen.UserControls.ProductNameView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:IkeaMind.WPF.Views.Screens.PictureFirstScreen.UserControls" 
+             xmlns:usercontrols="clr-namespace:IkeaMind.WPF.ViewModels.Screens.PictureFirstScreenViewModels.UserControls" 
+             d:DataContext="{d:DesignInstance Type=usercontrols:ProductNameViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="500">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" VerticalAlignment="Center">
+            <TextBlock TextWrapping="Wrap" Foreground="{Binding ProductColor, UpdateSourceTrigger=PropertyChanged}" FontSize="14px" FontWeight="Bold" FontFamily="Montserrat" Text="{Binding ProductName, UpdateSourceTrigger=PropertyChanged}" >
+                <!--JOKKMOKK ЙОКМОКК-->
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" Foreground="{Binding ProductColor, UpdateSourceTrigger=PropertyChanged}" FontSize="14px" FontFamily="Montserrat" Text="{Binding ProductCategory, UpdateSourceTrigger=PropertyChanged}">
+                <!--Стол и 4 стула--> 
+            </TextBlock>
+        </StackPanel>
+    </DockPanel>
+</UserControl>

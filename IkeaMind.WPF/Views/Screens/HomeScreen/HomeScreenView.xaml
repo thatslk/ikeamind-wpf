@@ -1,0 +1,32 @@
+﻿<Page x:Class="IkeaMind.WPF.Views.Screens.HomeScreen.HomeScreenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vmsHomescreen="clr-namespace:IkeaMind.WPF.ViewModels.Screens.HomeScreenViewModels" 
+             d:DataContext="{d:DesignInstance Type=vmsHomescreen:HomeScreenViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="635" d:DesignWidth="715">
+    <Grid>
+        <Border Name="mask" Background="White" CornerRadius="25, 0, 0, 0"/>
+        <DockPanel Background="#FBD914">
+            <DockPanel.OpacityMask>
+                <VisualBrush Visual="{Binding ElementName=mask}"/>
+            </DockPanel.OpacityMask>
+
+            <Grid>
+                <Grid DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Left" >
+                    <Image DockPanel.ZIndex ="2"  Source="./../../../Images/modeDescriptions.png" Width="197" Height="171"/>
+                </Grid>
+                <Grid DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                    <Image DockPanel.ZIndex ="1" Source="./../../../Images/HomeScreen.png" DockPanel.Dock="Bottom" VerticalAlignment="Bottom"></Image>
+                    <Image Margin="150,50,50,0" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Bottom" DockPanel.ZIndex ="0" Source="./../../../Images/KampradHej.png"></Image>
+                </Grid>
+            </Grid>
+
+            
+        </DockPanel>
+
+    </Grid>
+
+</Page>

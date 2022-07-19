@@ -1,0 +1,61 @@
+﻿<Page x:Class="IkeaMind.WPF.Views.Screens.NameFirstScreen.NameFirstScreenView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:views="clr-namespace:IkeaMind.WPF.Views.Screens.NameFirstScreen.UserControls"
+      xmlns:vmsHomeScreen="clr-namespace:IkeaMind.WPF.ViewModels.Screens.NameFirstScreenViewModels" 
+      xmlns:statisticControl="clr-namespace:IkeaMind.WPF.Views.Controls.StatisticControl" xmlns:wrongorrightcontrol="clr-namespace:IkeaMind.WPF.Views.Controls.WrongOrRightControl"
+      d:DataContext="{d:DesignInstance Type=vmsHomeScreen:NameFirstScreenViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="635" d:DesignWidth="715">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary 
+                Source= "/StyleDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    <DockPanel Background="#FFFFFF">
+        <views:HeaderView Margin="0,10,0,0" DockPanel.Dock="Top"/>
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Width="660px" Height="250px" Margin="0,15,0,0">
+            <ListBox BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" Width="660" Height="250px" SelectedItem="{Binding SelectedProduct}" ItemsSource="{Binding Products}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Height="240" VerticalAlignment="Top">
+                            <views:ProductView Margin="10,0" VerticalAlignment="Top" VerticalContentAlignment="Top" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <wrongorrightcontrol:WrongOrRightControl DockPanel.Dock="Top"/>
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Width="442px" Height="50px" Margin="0,15,0,0">
+            <Button Style="{StaticResource BlueButton}" Command="{Binding ApplySelectionCommand}" CommandParameter="{Binding SelectedProduct}" Width="200" Height="50" FontSize="18px" FontWeight="Bold">
+                Проверить!
+            </Button>
+
+
+            <Button Style="{StaticResource WhiteButton}" Command="{Binding ShowNextProductsCommand}" Width="200" Height="50" FontSize="15px" FontWeight="Bold" Margin="40,0,0,0">
+                Найти другие товары
+            </Button>
+        </StackPanel>
+
+        <statisticControl:Statistics DockPanel.Dock="Top" x:Name="Scores" Width="180px" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+
+        <DockPanel VerticalAlignment="Bottom" Height="auto" >
+            <Image Width="130px" Height="45px" Source="./../../../Images/LK_Sweden.png"  Margin="0,0,0,15" />
+        </DockPanel>
+
+    </DockPanel>
+</Page>
